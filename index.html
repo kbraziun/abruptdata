@@ -5,19 +5,24 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Data package for ecological regime shift and abrupt change methods • abruptdata</title>
+<title>An R package for metadata for ecological datasets exhibiting abrupt change or regime shifts • abruptdata</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="bootstrap-toc.css">
 <script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
-<script src="pkgdown.js"></script><meta property="og:title" content="Data package for ecological regime shift and abrupt change methods">
-<meta property="og:description" content="Data package containing ecological datasets to support application and evaluation of abrupt change and regime shift detection methods. 
-    This package contains empirical and simulated data that can be used to apply various regime shift or abrupt change detection methods on ecological data. ">
+<script src="pkgdown.js"></script><meta property="og:title" content="An R package for metadata for ecological datasets exhibiting abrupt change or regime shifts">
+<meta property="og:description" content="This package and repository collects and standardizes ecological datasets which exhibit either abrupt change or are recommended for use as 'null' data when testing the methods for detecting abrupt change. The package also serves data and metadata, and directly serves the R package [__abrupt__](http://github.com/regime-shifts/abrupt)">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<![endif]-->
+<![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-144017064-2"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-144017064-2');
+</script>
 </head>
 <body data-spy="scroll" data-target="#toc">
     <div class="container template-home">
@@ -50,7 +55,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/regime-shifts/abruptdata/">
+  <a href="https://github.com/regime-shifts/abruptdata">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
@@ -70,18 +75,72 @@
 <div id="abruptdata" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#abruptdata" class="anchor"></a>abruptdata</h1></div>
+<!-- badges: start -->
+
 <p>Data package comprising ecological datasets exhibiting abrupt change and relevant data suitable for evaluating methods for detecting abrupt change and ecological regime shifts.</p>
 <p>This package serves two purposes:</p>
 <ol>
-<li>Provide standardized data for the R package `regime-shifts/abrupt</li>
+<li>Provide standardized data for the R package <a href="github.com/regime-shifts/abruptdata">regime-shifts/abruptdata</a>
+</li>
 <li>Inform a database for applying or evaluating statistical methods for identifying ecological regime shifts or abrupt changes</li>
 </ol>
 <p>We welcome data contributions, but please follow code of conduct.</p>
+<div id="installation" class="section level2">
+<h2 class="hasAnchor">
+<a href="#installation" class="anchor"></a>Installation</h2>
+<p>You can install the in-development version of abrupt from GitHub with:</p>
+<div class="sourceCode" id="cb1"><pre class="downlit">
+<span class="kw">remotes</span>::<span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">"regime-shifts/abruptdata"</span>)
+</pre></div>
+</div>
 <div id="contributing-data" class="section level2">
 <h2 class="hasAnchor">
 <a href="#contributing-data" class="anchor"></a>Contributing Data</h2>
-<p>Instructions go here-this is a draft</p>
-<p>Step 1. Fork the repository Step 2. Add the data (see data-raw/add-data-template.R; edit this script and rename to reflect a short, intuitive version of the dataset you are adding, but please make sure it does not overlap with any other, existing data (see names of .rda files in /data). Run the script. This will add the data to /data/ Step 3. Step 4. Submit pull request</p>
+<p>There are two methods for contributing ‘new’ data to the abruptdata R package and database.</p>
+<div id="method-1-preferred-submit-new-data-and-documentation-via-a-github-pull-request" class="section level3">
+<h3 class="hasAnchor">
+<a href="#method-1-preferred-submit-new-data-and-documentation-via-a-github-pull-request" class="anchor"></a>Method 1 (preferred): submit new data and documentation via a GitHub pull request</h3>
+<ol>
+<li>Fork the repository<br>
+</li>
+<li>Add the data</li>
+</ol>
+<ul>
+<li>Identify a short, intuitive name {{dataset}} for your contributed dataset. For example dataset names and to ensure {{dataset}} does not conflict with existing data, see <a href="https://regime-shifts.github.io/abruptdata/reference/index.html">our list of datasets here</a>.<br>
+</li>
+<li>Copy the file or contents within the file ./data-raw/add-data-template.R into a new file, /data-raw/{{dataset}}.R</li>
+<li>Edit and run the file /data-raw/{{dataset}}.R. Running ./data-raw/{{dataset}}.R will create save the munged dataset as a .rda file in location ./data/{{dataset}}.rda.<br>
+</li>
+</ul>
+<ol>
+<li>While working within the abruptdata project directory, build the documentation for the data<br>
+</li>
+<li>Provide metadata. We provide a few options for describing the data:</li>
+</ol>
+<ul>
+<li>Directly edit the /R/data.R with new fields to describe {{dataset}}. Follow the conventions used in other datasets, and provide as much detail as possible</li>
+<li>(INSTRUCTIONS TBA) Provide attributes and factors table</li>
+<li>(INSTRUCTIONS TBA) Open an issue using the “new data: metadata” template.</li>
+</ul>
+<ol>
+<li>Submit pull request to reigme-shifts/abruptdata/MASTER; wait for approval.</li>
+</ol>
+</div>
+<div id="method-2-not-preferred-tba" class="section level3">
+<h3 class="hasAnchor">
+<a href="#method-2-not-preferred-tba" class="anchor"></a>Method 2 (not preferred): TBA</h3>
+<p>This method will include an option to send the maintainer(s) the code, the original data (or link to retrievable data), and metadata associated with the data.</p>
+</div>
+</div>
+<div id="code-of-conduct" class="section level2">
+<h2 class="hasAnchor">
+<a href="#code-of-conduct" class="anchor"></a>Code of Conduct</h2>
+<p>Please note that the abrupt project is released with a <a href="https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
+</div>
+<div id="disclaimers" class="section level2">
+<h2 class="hasAnchor">
+<a href="#disclaimers" class="anchor"></a>Disclaimers</h2>
+<p>These data are preliminary or provisional and are subject to revision. They are being provided to meet the need for timely best science. The data have not received final approval by the U.S. Geological Survey (USGS) and are provided on the condition that neither the USGS nor the U.S. Government shall be held liable for any damages resulting from the authorized or unauthorized use of the data. This information is preliminary or provisional and is subject to revision. It is being provided to meet the need for timely best science. The information has not received final approval by the U.S. Geological Survey (USGS) and is provided on the condition that neither the USGS nor the U.S. Government shall be held liable for any damages resulting from the authorized or unauthorized use of the information. This software is preliminary or provisional and is subject to revision. It is being provided to meet the need for timely best science. The software has not received final approval by the U.S. Geological Survey (USGS). No warranty, expressed or implied, is made by the USGS or the U.S. Government as to the functionality of the software and related material nor shall the fact of release constitute any such warranty. The software is provided on the condition that neither the USGS nor the U.S. Government shall be held liable for any damages resulting from the authorized or unauthorized use of the software.</p>
 </div>
 </div>
   </div>
@@ -90,7 +149,7 @@
     <div class="links">
 <h2>Links</h2>
 <ul class="list-unstyled">
-<li>Browse source code at <br><a href="https://github.com/regime-shifts/abruptdata/">https://​github.com/​regime-shifts/​abruptdata/​</a>
+<li>Browse source code at <br><a href="https://github.com/regime-shifts/abruptdata">https://​github.com/​regime-shifts/​abruptdata</a>
 </li>
 <li>Report a bug at <br><a href="https://github.com/regime-shifts/abruptdata/issues">https://​github.com/​regime-shifts/​abruptdata/​issues</a>
 </li>
@@ -118,17 +177,26 @@
 <div class="developers">
 <h2>Developers</h2>
 <ul class="list-unstyled">
-<li>Jessica Burnett <br><small class="roles"> Author, maintainer </small>  </li>
+<li>
+<a href="https://github.com/trashbirdecology">Jessica Burnett</a> <br><small class="roles"> Maintainer, author </small> <a href="https://orcid.org/0000-0002-0896-5099" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li>Kristin Braziunas <br><small class="roles"> Author </small> <a href="https://orcid.org/0000-0000-0000-0000" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li>Xavier Benito <br><small class="roles"> Author </small> <a href="https://orcid.org/0000-0000-0000-0000" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
 <li><a href="authors.html">All authors...</a></li>
 </ul>
 </div>
 
-  </div>
+  <div class="dev-status">
+<h2>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://github.com/regime-shifts/abruptdata/actions"><img src="https://github.com/regime-shifts/abruptdata/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
+</ul>
+</div>
+</div>
 </div>
 
 
       <footer><div class="copyright">
-  <p>Developed by Jessica Burnett.</p>
+  <p>Developed by <a href="https://github.com/trashbirdecology">Jessica Burnett</a>, Kristin Braziunas, Xavier Benito.</p>
 </div>
 
 <div class="pkgdown">
